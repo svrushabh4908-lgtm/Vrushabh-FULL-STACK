@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f6fb">
+    <title>Student Performance | Academic Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> ACADEMIC RECORDS</p>
+                <h1>Student performance</h1>
+                <p class="hero-description">Register student details, record subject marks, and review class results in one place.</p>
+            </div>
+            <div class="hero-mark" aria-hidden="true">SP</div>
+        </header>
+
+        <section class="panel form-panel" aria-labelledby="registration-title">
+            <div class="section-heading">
+                <div class="section-number">01</div>
+                <div>
+                    <h2 id="registration-title">Student registration</h2>
+                    <p>Add a student and their marks for this assignment.</p>
+                </div>
+            </div>
+
+            <form id="studentForm" novalidate>
+                <div class="form-section">
+                    <h3>Student details</h3>
+                    <div class="fields-grid student-fields">
+                        <div class="field">
+                            <label for="name">Student name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g. Alex Morgan" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="rollNo">Roll number</label>
+                            <input type="text" id="rollNo" name="rollNo" placeholder="e.g. STU-024" required>
+                        </div>
+                        <div class="field field-wide">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section marks-section">
+                    <div class="marks-heading">
+                        <div>
+                            <h3>Assignment marks</h3>
+                            <p>Enter a score from 0 to 100 for each subject.</p>
+                        </div>
+                        <span class="marks-scale">0-100 points</span>
+                    </div>
+                    <div class="fields-grid marks-grid">
+                        <div class="field">
+                            <label for="fullStack"><span class="subject-dot full-stack-dot"></span>Full Stack</label>
+                            <div class="input-suffix">
+                                <input type="number" id="fullStack" name="fullStack" min="0" max="100" step="1" placeholder="0" required>
+                                <span>/ 100</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="dsa"><span class="subject-dot dsa-dot"></span>DSA</label>
+                            <div class="input-suffix">
+                                <input type="number" id="dsa" name="dsa" min="0" max="100" step="1" placeholder="0" required>
+                                <span>/ 100</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="python"><span class="subject-dot python-dot"></span>Python</label>
+                            <div class="input-suffix">
+                                <input type="number" id="python" name="python" min="0" max="100" step="1" placeholder="0" required>
+                                <span>/ 100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <p class="form-hint">All fields are required.</p>
+                    <div class="form-actions">
+                        <button type="button" id="clearBtn" class="button button-secondary">Clear form</button>
+                        <button type="submit" class="button button-primary">Register student <span aria-hidden="true">&gt;</span></button>
+                    </div>
+                </div>
+            </form>
+            <div id="message" class="message" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="overview-section" aria-labelledby="overview-title">
+            <div class="section-heading overview-heading">
+                <div class="section-number">02</div>
+                <div>
+                    <h2 id="overview-title">Class overview</h2>
+                    <p>A quick summary of registered student results.</p>
+                </div>
+            </div>
+            <div id="result" class="stats-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="panel records-panel" aria-labelledby="records-title">
+            <div class="records-heading">
+                <div>
+                    <h2 id="records-title">Registered students</h2>
+                    <p>Student records and assignment performance.</p>
+                </div>
+                <span class="records-icon" aria-hidden="true">OK</span>
+            </div>
+            <div id="studentList"></div>
+        </section>
+
+        <footer class="page-footer">Student performance tracker <span>|</span> Assignment project</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
